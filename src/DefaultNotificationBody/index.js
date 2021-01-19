@@ -90,7 +90,7 @@ class DefaultNotificationBody extends React.Component {
           </View>
           <View style={styles.textContainer}>
             <Text numberOfLines={1} style={styles.title}>{title}</Text>
-            <Text numberOfLines={1} style={styles.message}>{message}</Text>
+            {message && <Text numberOfLines={1} style={styles.message}>{message}</Text>}
           </View>
         </TouchableOpacity>
       </GestureRecognizer>
@@ -110,7 +110,7 @@ DefaultNotificationBody.propTypes = {
 
 DefaultNotificationBody.defaultProps = {
   title: 'Notification',
-  message: 'This is a test notification',
+  message: null,
   vibrate: true,
   isOpen: false,
   iconApp: null,
